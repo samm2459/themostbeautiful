@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pencarian Google</title>
+  <style>
+    body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f9f9f9;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.search-header {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.search-header h1 {
+  font-size: 48px;
+  color: #4285f4;
+  margin: 0;
+}
+
+.search-bar {
+  margin-top: 10px;
+}
+
+.search-bar input {
+  width: 60%;
+  padding: 10px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.search-bar button {
+  padding: 10px 20px;
+  font-size: 16px;
+  color: white;
+  background-color: #4285f4;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.search-bar button:hover {
+  background-color: #357ae8;
+}
+
+.results {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+}
+
+.result-item {
+  width: 150px;
+  text-align: center;
+  background: #fff;
+  padding: 10px;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.result-item img {
+  width: 100%;
+  border-radius: 8px;
+}
+
+.result-item p {
+  margin: 10px 0 0;
+  font-size: 14px;
+}
+
+.related-questions {
+  margin-top: 30px;
+  background: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.related-questions h2 {
+  font-size: 20px;
+  color: #333;
+  margin-bottom: 15px;
+}
+
+.related-questions ul {
+  list-style: none;
+  padding: 0;
+}
+
+.related-questions li {
+  margin-bottom: 10px;
+}
+
+.related-questions button {
+  background: none;
+  border: none;
+  color: #4285f4;
+  font-size: 16px;
+  cursor: pointer;
+  text-align: left;
+  padding: 0;
+  width: 100%;
+}
+
+.related-questions button:hover {
+  text-decoration: underline;
+}
+
+.related-questions .answer {
+  display: none;
+  margin-top: 5px;
+  font-size: 14px;
+  color: #555;
+}
+
+  </style>
+</head>
+<body>
+  <div class="container">
+    <!-- Header Search Section -->
+    <header class="search-header">
+      <h1>Google</h1>
+      <div class="search-bar">
+        <input type="text" id="search-input" placeholder="Cari di Google...">
+        <button onclick="search()">Search</button>
+      </div>
+    </header>
+
+    <!-- Search Results Section -->
+    <div class="results">
+      <div class="result-item">
+        <img src="Ika.jpg" alt="Wanita 1">
+        <p>100 Perempuan Tercantik di Dunia</p>
+      </div>
+      <div class="result-item">
+        <img src="rizka.jpg" alt="Wanita 2">
+        <p>10 Foto Rizka Rofifah, Wanita Tercantik</p>
+      </div>
+      <div class="result-item">
+        <img src="ika3.jpg" alt="Wanita 3">
+        <p>Inilah Daftar 10 Wanita Tercantik</p>
+      </div>
+      <div class="result-item">
+        <img src="ika4.jpg" alt="Wanita 4">
+        <p>10 Wanita Tercantik di Dunia Tahun Ini</p>
+      </div>
+      <div class="result-item">
+        <img src="ika5.jpg" alt="Wanita 5">
+        <p>Berita dan Informasi Wanita Tercantik</p>
+      </div>
+    </div>
+
+    <!-- Related Questions Section -->
+    <div class="related-questions">
+      <h2>Orang lain juga bertanya</h2>
+      <ul>
+        <li>
+          <button onclick="toggleAnswer(1)">Siapa wanita tercantik di dunia no 1?</button>
+          <p id="answer-1" class="answer">Rizka Rofifah adalah wanita tercantik menurut daftar terbaru.</p>
+        </li>
+        <li>
+          <button onclick="toggleAnswer(2)">Siapa wanita tercantik nomor 1 di Indonesia?</button>
+          <p id="answer-2" class="answer">Daftar ini biasanya berdasarkan voting atau sains.</p>
+        </li>
+        <li>
+          <button onclick="toggleAnswer(3)">Siapakah wanita tercantik 2024?</button>
+          <p id="answer-3" class="answer">Beberapa nama populer adalah Rizka,Ika dan lainnya.</p>
+        </li>
+        <li>
+          <button onclick="toggleAnswer(4)">Siapa wanita tercantik di dunia nomor 2?</button>
+          <p id="answer-4" class="answer">Rizka menduduki peringkat kedua berdasarkan daftar ini.</p>
+        </li>
+      </ul>
+    </div>
+  </div>
+
+  <script>
+    function search() {
+  const input = document.getElementById('search-input').value;
+  alert(`Pencarian untuk: ${input}`);
+}
+
+function toggleAnswer(id) {
+  const answer = document.getElementById(`answer-${id}`);
+  if (answer.style.display === "block") {
+    answer.style.display = "none";
+  } else {
+    answer.style.display = "block";
+  }
+}
+
+  </script>
+</body>
+</html>
